@@ -50,7 +50,7 @@
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1"
   },
-  "postinstall": "ng build --aot -prod",
+  "postinstall": "ng build",
   "engines": {
     "node": "^8.x",
     "npm": "^6.x"

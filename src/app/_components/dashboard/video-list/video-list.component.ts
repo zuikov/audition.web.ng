@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {DashboardService} from '../../../_services';
-import {InvoicesInterface} from '../../../_models/Invoices.model';
 import {MatDialog} from '@angular/material/dialog';
 import {GoogleAnalyticsEventsService} from '../../../_services/google-analytics-events.service';
 
@@ -10,8 +9,6 @@ import {GoogleAnalyticsEventsService} from '../../../_services/google-analytics-
   styleUrls: ['./video-list.component.scss']
 })
 export class VideoListComponent implements OnInit {
-  invoices: Array<InvoicesInterface> = [];
-  filteredInvoices: Array<InvoicesInterface> = [];
   filter = 'all'
   public playlist: any;
   constructor(
