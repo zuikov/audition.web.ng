@@ -1,0 +1,39 @@
+<div class="main">
+  <div class="main-header">
+    <app-header></app-header>
+  </div>
+  <div class="main-body">
+    <div class="main-navigation">
+      <app-navigation></app-navigation>
+    </div>
+    <div class="main-content">
+      <div class="main-content__box">
+        <div class="dashboard dashboard-box">
+          <div class="dashboard-row">
+            <div class="dashboard-item">
+              <app-video-editor></app-video-editor>
+            </div>
+            <div class="dashboard-item">
+              <div class="dashboard-item__head">Check audition</div>
+              <div class="buy-currency">
+                <auditor-widget [hideChangesValues]="true" (getInvoiceEvent)="getInvoice($event)"></auditor-widget>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard-row">
+            <div class="dashboard-item">
+              <app-video-list></app-video-list>
+            </div>
+            <div class="dashboard-item">
+              <app-user-list></app-user-list>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-content__footer">
+          <app-footer></app-footer>
+      </div>
+    </div>
+
+  </div>
+</div>

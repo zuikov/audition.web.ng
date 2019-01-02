@@ -1,0 +1,95 @@
+@import '../../../../assets/variables';
+
+.invoices {
+  .invoices-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-family: $font-rm;
+    font-weight: 700;
+    font-size: 1.125em;
+    color: $color-black;
+    h2 {
+      font-family: $font-rm;
+      font-weight: 700;
+      font-size: 18px;
+      color: $color-black;
+    }
+
+    .filter {
+      display: flex;
+      justify-content: space-between;
+      width: 180px;
+      > span {
+        height: 24px;
+        font-family: WorkSans;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        color: rgba($color-black, 0.5);
+        cursor: pointer;
+        font-weight: normal;
+        &.active {
+          background-color: rgba($color-blue2, 0.1);
+        }
+      }
+    }
+  }
+  .invoices-body {
+    .table {
+      width: 100%;
+      thead {
+        tr{
+          th {
+            text-align: left;
+            border-bottom: 1px solid rgba($color-black, 0.1);
+            padding: 11px 0;
+            font-family: WorkSans;
+            font-size: 16px;
+            color: rgba($color-black, 0.5)
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            text-align: left;
+            border-bottom: 1px solid rgba($color-black, 0.1);
+            padding: 0;
+            font-family: WorkSans;
+            font-size: 16px;
+            height: 60px;
+            vertical-align: middle;
+            &:first-child {
+              font-weight: bold;
+              &.paid {
+                color: $color-green;
+              }
+              &.unpaid, &.cancelled {
+                color: $color-pink;
+              }
+            }
+            .due {
+              color: $color-pink;
+            }
+            &:last-child {
+              text-align: right;
+              span {
+                cursor: pointer;
+                margin: 0 7px;
+              }
+            }
+            &.no-data {
+              text-align: center;
+              font-weight: normal;
+            }
+          }
+        }
+      }
+      span {
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<div class="wrapper">
+    <div class="lauout-right-sidebar faq-bar">
+        <app-video-navigation [typeNavigation]="'videoLibrary'"></app-video-navigation>
+      </div>
+  <div class="lauout">
+    <div *ngIf="isOpenedLeftSidebar" class="lauout-left-sidebar__overlay" id="js-sidebar-overlay"
+         (click)="mobMenuToggle()">
+    </div>
+    <div class="lauout-container">
+      <div class="lauout-wrap faq-lauout-wrap">
+        <div class="lauout-main">
+          <div>
+            <div class="faq-search">
+              <input type="search"
+                     [(ngModel)]="searchText"
+                     name="search"
+                     class="faq-search__input"
+                     placeholder="Search"
+                     (keyup)="countResults()"
+                     autocomplete="off"/>
+              <div class="faq-search__message">
+                <div class="faq-search__message-title"
+                     *ngIf="result !== 0 && searchText !== ''">
+                  {{result}} results found for  «{{searchText}}»</div>
+                <div class="faq-search__message-txt"
+                     *ngIf="result == 0 && searchText !== ''">
+                  Sorry! We looked everywhere, but couldn&apos;t find  «{{searchText}}». <span>💔 🔍</span></div>
+              </div>
+            </div>
+
+            <div class="faq" #faqContainer>
+                <section class="faq__sec" #catSection *ngFor="let section of questionsArraySort">
+                    <h2 [id]="section.title.split(' ').join('')" class="faq__blc-title"
+                        *ngIf="catSection.querySelectorAll('.faq__item').length && section.title.split(' ').join('') === queryParam || !queryParam && catSection.querySelectorAll('.faq__item').length">
+                      {{section.title}}</h2>
+                    <div  class="faq__accordion" *ngIf="section.title.split(' ').join('') === queryParam || !queryParam">
+                      <mat-accordion class="faq__item" *ngFor="let item of section.qaGroup | filter : searchText">
+                        <mat-expansion-panel >
+                          <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                            <mat-panel-title>
+                              <h3 class="faq__item-title"
+                                  [innerHTML] = "item.title | highlight : searchText"></h3>
+                            </mat-panel-title>
+                          </mat-expansion-panel-header>
+                          <mat-panel-description class="faq__item-main open"
+                                                 [innerHTML] = "item.description | breakLine | highlight : searchText">
+                          </mat-panel-description>
+                          <ng-template matExpansionPanelContent>
+                            <iframe class="workspace-video" width="560" height="315" [src]="sanitizer.bypassSecurityTrustResourceUrl(item.link)" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+                            <div *ngIf="isLoggedIn" class="workspace-auditor">
+                              <auditor-widget
+                                (getInvoiceEvent)="getInvoice($event, 'top')"
+                                (getEntered)="onGetEnteredTop($event)"
+                                (payEntered)="onPayEnteredTop($event)"
+                                (exchangeInfoClicked)="onExchangeClicked($event)"></auditor-widget>
+                          </div>
+                          </ng-template>
+
+                        </mat-expansion-panel>
+ 
+                      </mat-accordion>
+                    </div>
+                  </section>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+

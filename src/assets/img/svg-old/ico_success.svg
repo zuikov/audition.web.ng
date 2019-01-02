@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="162" height="162" viewBox="0 0 162 162">
+    <defs>
+        <linearGradient id="c" x1="124.833%" x2="-10.307%" y1="-20.636%" y2="97.509%">
+            <stop offset="0%" stop-color="#14236B"/>
+            <stop offset="100%" stop-color="#142C9C"/>
+        </linearGradient>
+        <circle id="b" cx="57" cy="57" r="57"/>
+        <filter id="a" width="173.7%" height="173.7%" x="-36.8%" y="-26.3%" filterUnits="objectBoundingBox">
+            <feOffset dy="12" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="12"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.164324105 0 0 0 0 0.168050168 0 0 0 0 0.93189307 0 0 0 0.158882473 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(24 12)">
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="url(#c)" xlink:href="#b"/>
+        </g>
+        <path fill="#FFF" fill-rule="nonzero" d="M72.648 82.929l32.103-31.726.012.012c2.053-1.726 5.158-1.61 7.122.33 1.964 1.941 2.08 5.01.334 7.039l.012.012-35.906 35.483-.008-.008a5.322 5.322 0 0 1-.013.011c-1.967 1.871-5.02 1.961-7.047.258l-.012.012-20.945-20.7.008-.008a5.183 5.183 0 0 1 .241-7.137c1.982-1.96 5.145-2.039 7.223-.239l.008-.008L72.648 82.93z"/>
+    </g>
+</svg>

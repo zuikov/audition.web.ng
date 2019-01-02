@@ -1,0 +1,96 @@
+<div class="balance">
+  <div class="balance-head">
+    <div class="balance-title">
+      <img src="../../../../assets/img/icn/dashboard.svg" alt="" class="balance-title__img">
+      <span class="balance-title__text">Edit video</span>
+    </div>
+    <div class="balance-amount">
+      <div class="balance-amount__left">
+        <!-- <span class="balance-amount__whole"></span> -->
+        <span class="balance-amount__float"></span>
+      </div>
+      <div class="balance-amount__right">
+        <button class="balance-amount__btn" (click)="openDialogWithdrawForm()">some action</button>
+      </div>
+    </div>
+  </div>
+  <div class="balance-body">
+    <div class="balance-body__top">
+      <h2>some title</h2>
+      <div class="filter">
+        <span (click)="setFitler('day')" [ngClass]="{'active': filter === 'day'}">Day</span>
+        <span (click)="setFitler('week')" [ngClass]="{'active': filter === 'week'}">Week</span>
+        <span (click)="setFitler('month')" [ngClass]="{'active': filter === 'month'}">Month</span>
+      </div>
+    </div>
+
+
+
+    <div class="form form_invoice">
+      <!-- <div class="form-changes">
+        <h1>Auditor</h1>
+        <div class="form-exchange__title">We provide a platform where anyone can show support for causes they believe in</div>
+      </div> -->
+    
+      <label class="form-group" [ngClass]="{'error': changeValueError}">
+        <div class="form-group__left form-group-block">
+          <span class="form-group__text">number of section</span>
+          <input type="text" maxlength="2" class="form-field" [(ngModel)]="sectionNumber" (keydown)="preventNotANumberInput($event)">
+        </div>
+        <div class="form-group__right form-group-block">
+        </div>
+        <mat-error class="error-message" *ngIf="changeValueError">Some error in text field</mat-error>
+      </label>
+    
+      <label class="form-group" [ngClass]="{'error': changeValueError}">
+        <div class="form-group__left form-group-block">
+          <span class="form-group__text">name of section</span>
+          <input type="text" maxlength="256" class="form-field" [(ngModel)]="sectionName">
+        </div>
+        <div class="form-group__right form-group-block">
+        </div>
+        <mat-error class="error-message" *ngIf="changeValueError">Some error in text field</mat-error>
+      </label>
+    
+      <label class="form-group" [ngClass]="{'error': changeValueError}">
+        <div class="form-group__left form-group-block">
+          <span class="form-group__text">title</span>
+          <input type="text" maxlength="256" class="form-field" [(ngModel)]="title">
+        </div>
+        <div class="form-group__right form-group-block">
+        </div>
+        <mat-error class="error-message" *ngIf="changeValueError">Some error in text field</mat-error>
+      </label>
+    
+      <label class="form-group">
+        <div class="form-group__left ic_tilda">
+          <span class="form-group__text">description</span>
+          <input type="text" maxlength="1000" class="form-field" [(ngModel)]="description">
+        </div>
+        <div class="form-group__right">
+        </div>
+      </label>
+    
+      <label class="form-group">
+        <div class="form-group__left ic_tilda">
+          <span class="form-group__text">link</span>
+          <input type="text" maxlength="1000" class="form-field" [(ngModel)]="link">
+        </div>
+        <div class="form-group__right">
+        </div>
+      </label>
+    
+      <div class="form-group__btn">
+        <input type="button" value="Save video" class="form-btn" (click)="addVideo()">
+      </div>
+    </div>
+
+
+    <div class="balance-chart">
+      <canvas id="rates"></canvas>
+    </div>
+  </div>
+</div>
+
+
+

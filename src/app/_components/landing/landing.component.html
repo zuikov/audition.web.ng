@@ -1,0 +1,160 @@
+<div class="wrapper">
+  <header class="header">
+      <div class="container">
+          <div class="header__wrap">
+              <div class="header__banner" (click)="headerLogoClicked()">
+                <a href="javascript:void(0)"><img src="../../../assets/img/banner-england.jpg" alt=""/></a>
+                <a href="javascript:void(0)"><img src="../../../assets/img/banner-american.jpg" alt=""/></a>
+                <a href="javascript:void(0)"><img src="../../../assets/img/banner-canadian.jpg" alt=""/></a>
+                <a href="javascript:void(0)"><img src="../../../assets/img/banner-ireland.png" alt=""/></a>
+                <a href="javascript:void(0)"><img src="../../../assets/img/banner-scotland.png" alt=""/></a>
+                <a href="javascript:void(0)"><img src="../../../assets/img/banner-australia.png" alt=""/></a>
+                <a href="javascript:void(0)"><img src="../../../assets/img/banner-india.png" alt=""/></a>
+                <a href="javascript:void(0)"><img src="../../../assets/img/banner-south-africa.png" alt=""/></a>
+                <a href="javascript:void(0)"><img src="../../../assets/img/banner-cayman-Islands.png" alt=""/></a>
+                <!-- <a href="javascript:void(0)"><img src="../../../assets/img/banner-jamaica.png" alt="banner"/></a> -->
+              </div>
+              <nav class="header__bar" id="js-mob-menu" [class.open]="mobilSignInMenuOpen">
+                  <ul class="header__menu">
+                      <!-- <li><a class="header-menu__item" (click)="headerMenuClicked('intermediate')">Intermediate</a></li> -->
+                      <!-- <li><a class="header-menu__item" (click)="headerMenuClicked('advanced')">Advanced</a></li> -->
+                      <!-- <li><a class="header-menu__item" (click)="headerMenuClicked('fluent')">Fluent</a></li> -->
+                      <li><a class="header-menu__item" (click)="headerMenuClicked('terms')">How it works</a></li>
+                  </ul>
+                  <ul class="header__user-nav">
+                    <li *ngIf="!isLoggedIn"><a href="javascript:void(0)" class="header-auth__btn auth_active" (click)="openDialogRegister()">Sign up</a></li>
+                    <li *ngIf="!isLoggedIn"><a href="javascript:void(0)" class="header-auth__btn" (click)="openDialogAuth()">Sign in</a></li>
+                    <li *ngIf="isLoggedIn">
+                      <a href="javascript:void(0)" class="controls-logout" (click)="logOut()">
+                        <img src="../../../assets/img/icn/logout.svg" alt=""/>
+                        logout
+                      </a>
+                    </li>
+                  </ul>
+              </nav>
+              <button class="btn mob-menu-btn" (click)="mobilSignInMenuOpen = !mobilSignInMenuOpen"></button>
+          </div>
+      </div>
+  </header>
+  <main class="main">
+      <section class="main-sec">
+          <div class="container">
+              <div class="main-sec__wrap">
+                  <h1 class="main-sec__title">How to learn<br/><span> conversational English ?</span><br/> Start right now</h1>
+                  <h2 class="main-sec__description">THERE ARE TWO GREAT WAYS:<br/> SPEAKING WITH NATIVES<br/> AND PRACTICING SPEECH RECOGNITION.<br/> HERE WE START WITH SECOND ONE<br /></h2>
+                  <div class="main-sec__butterfly"><img src="../../../assets/img/peacock-butterfly.png" alt="butterfly" /></div>
+              </div>
+          </div>
+      </section>
+      <div class="advantages" #terms>
+          <div class="container">
+              <div class="advantages__wrap">
+                  <div class="advantages__item">
+                      <div class="advantages__item-icn"><img src="../../../assets/img/icn/active-search.svg" alt="" /></div>
+                      <div class="advantages__item-main">
+                          <div class="advantages__item-title">Search</div>
+                          <div class="advantages__item-txt">Use the search bar  <br/>to find videos <br/>
+                            you are interesting <br/> by key words</div>
+                      </div>
+                  </div>
+                  <div class="advantages__item">
+                      <div class="advantages__item-icn"><img src="../../../assets/img/icn/active-watch.svg" alt="" /></div>
+                      <div class="advantages__item-main">
+                          <div class="advantages__item-title">Watch</div>
+                          <div class="advantages__item-txt">Browse the list of  <br/>this videos and choose <br/>
+                            approptiate acoording to <br/> topic and level</div>
+                      </div>
+                  </div>
+                  <div class="advantages__item">
+                      <div class="advantages__item-icn"><img src="../../../assets/img/icn/active-register.svg" alt="" /></div>
+                      <div class="advantages__item-main">
+                          <div class="advantages__item-title">Register</div>
+                          <div class="advantages__item-txt">You need an account  <br/>to use auditor application<br/>
+                            and<br/> to story your results</div>
+                      </div>
+                  </div>
+                  <div class="advantages__item">
+                      <div class="advantages__item-icn"><img src="../../../assets/img/icn/active-keyboard.svg" alt="" /></div>
+                      <div class="advantages__item-main">
+                          <div class="advantages__item-title">Write</div>
+                          <div class="advantages__item-txt">Start the auditor app  <br/>to write down a speech <br/>
+                            Use editing tools <br/> to correct your notes</div>
+                      </div>
+                  </div>
+                  <div class="advantages__item">
+                      <div class="advantages__item-icn"><img src="../../../assets/img/icn/active-check.svg" alt="" /></div>
+                      <div class="advantages__item-main">
+                          <div class="advantages__item-title">Check</div>
+                          <div class="advantages__item-txt">Use a check button  <br/>to examine your notes <br/>
+                            Specify strict or soft <br/> examination mode</div>
+                      </div>
+                  </div>
+                  <div class="advantages__item">
+                      <div class="advantages__item-icn"><img src="../../../assets/img/icn/active-save.svg" alt="" /></div>
+                      <div class="advantages__item-main">
+                          <div class="advantages__item-title">Save</div>
+                          <div class="advantages__item-txt">Save your notes  <br/>and results <br/>
+                            You can return to <br/> your results anytime</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <section class="how-it-work">
+          <div class="container">
+              <video-library></video-library>
+          </div>
+      </section>
+      <section class="transparent">
+          <div class="container">
+              <h2 class="transparent__title">Why You Should Learn to Speak English by “Doing”</h2>
+              <div class="transparent__desc">
+                  The knowledge you gain from learning by doing is called implicit knowledge. To use implicit knowledge, you don’t need to “think” about it. Which means that you don’t have to think about grammar when you speak English. This is why you can speak your first language fluently without thinking about grammar; your knowledge of your first language is implicit knowledge.
+                  When you don’t have to think about grammar, it frees up your mind so you can concentrate on expressing your thoughts and ideas. So, how do you gain this type of knowledge?
+                  You gain this type of knowledge by listening to English conversations and by speaking English (learning by doing). This is the right way to learn English speaking.
+
+                  <br><br>Examples of learning by doing (what you should do):
+              </div>
+              <div class="transparent__row">
+                  <div class="transparent__col">
+                      <div class="transparent__var">*</div>
+                      <div class="transparent__txt">Listen to English conversations</div>
+                  </div>
+                  <div class="transparent__col">
+                      <div class="transparent__var">*</div>
+                      <div class="transparent__txt">Talk to native speakers</div>
+                  </div>
+                  <div class="transparent__col">
+                      <div class="transparent__var">*</div>
+                      <div class="transparent__txt">Imitate (copy) native speakers</div>
+                  </div>
+              </div>
+              <button class="btn btn--landing-red how-it-work__btn" (click)="openDialogRegister()">Create an account</button>
+          </div>
+      </section>
+  </main>
+  <footer class="footer">
+      <div class="container">
+          <div class="footer__wrap">
+              <!-- <div class="footer__col-left">
+                  <div class="footer__icn"><img src="../../../assets/img/icn/dashboard.svg" alt="" /></div>
+                  <div class="footer__txt">
+                      Is it possible to speak proper English without studying grammar?
+                      Yes, it’s possible. You just have to expose yourself to correct English. The easiest way to do that is to listen to a lot of English conversations (spoken by native speakers).
+                      When you listen to native speakers, you’re learning how to speak English correctly.
+                  </div>
+                  <div class="footer__icn"><img src="../../../assets/img/icn/dashboard.svg" alt="" /></div>
+              </div> -->
+              
+          </div>
+      </div>
+      <nav class="footer__nav">
+          <ul>
+              <li>© 2018  |  Audition test project</li>
+              <li><a href="javascript:void(0)">link a</a></li>
+              <li><a routerLink=" ">link b</a></li>
+              <li><a routerLink=" ">link c</a></li>
+          </ul>
+      </nav>
+  </footer>
+</div>

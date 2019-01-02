@@ -1,0 +1,15 @@
+<div class="form form_invoice" *ngIf="!isFromFooter">
+  <div class="form-changes" *ngIf="!hideChangesValues">
+    <h1>Auditor</h1>
+    <div class="form-exchange__title">We provide a platform where anyone can show support for causes they believe in</div>
+
+  </div>
+
+      <span class="form-group__text">write at dictation</span>
+      <textarea cols="96" rows="12" maxlength="4096" class="form-field" [(ngModel)]="note"></textarea>
+
+  <div class="form-group__btn">
+    <input type="button" value="Save note" class="form-btn" (click)="saveNote()">
+  </div>
+</div>
+

@@ -1,0 +1,43 @@
+<div class="invoices">
+  <div class="invoices-head">
+    <h2>List of videos</h2>
+    <div class="filter">
+      <span (click)="setFilter('all')" [ngClass]="{'active': filter === 'all'}">All</span>
+      <span (click)="setFilter('paid')"  [ngClass]="{'active': filter === 'paid'}">Active</span>
+      <span (click)="setFilter('unpaid')"  [ngClass]="{'active': filter === 'unpaid'}">Archived</span>
+    </div>
+  </div>
+  <div class="invoices-body">
+    <table class="table">
+      <thead class="table-head">
+      <tr>
+        <th>
+          <span>Status</span>
+        </th>
+        <th>
+          <span>Title</span>
+        </th>
+        <!-- <th>
+          <span>Date</span>
+        </th>
+        <th>
+          <span>Title</span>
+        </th>
+        <th></th> -->
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let video of playlist">
+          <td>{{video.sectionName}}</td>
+          <td>{{video.title}}</td>
+
+      </tr>
+      <tr *ngIf="playlist?.length === 0">
+        <td colspan="4" class="no-data">
+          <span>No videos so far</span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

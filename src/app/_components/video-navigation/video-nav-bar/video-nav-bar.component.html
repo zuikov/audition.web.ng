@@ -1,0 +1,6 @@
+<nav class="right-sidebar-nav">
+    <ul class="horizontal">
+      <li><a routerLink="" [queryParams]="{ 'section': null}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">All</a></li>
+      <li *ngFor="let title of uniqueTitles"><a routerLink="" [queryParams]="{ 'section': title.split(' ').join('')}" routerLinkActive="active">{{title}}</a></li>
+    </ul>
+</nav>

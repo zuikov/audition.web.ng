@@ -1,0 +1,150 @@
+@import '../../../assets/variables';
+
+.dashboard {
+  &-row {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &-item {
+    width: 100%;
+    min-width: 600px;
+    min-height: 1px;
+    flex-basis: 600px;
+    padding: 30px 30px 40px 30px;
+    margin: 20px 20px 0 0;
+    border-radius: 6px;
+    background: $color-white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+    &:last-child {
+      margin-right: 0;
+    }
+    &__head {
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: $font-rm;
+      font-weight: 700;
+      font-size: 1.125em;
+      color: $color-black;
+    }
+  }
+  /deep/ .form_invoice {
+    label.form-group {
+      border: 1px solid rgba($color-blue2, 0.2);
+      &:hover, &:focus {
+        border-color: rgba($color-blue, 0.6);
+      }
+    }
+    .form-exchange {
+      &__title, &__value {
+        color: rgba($color-black, 0.6);
+      }
+      &.decorate {
+        &:before {
+          background-color: #d3d4e2;
+        }
+        &:after {
+          background-color: #d3d4e2;
+        }
+      }
+    }
+    .form-group__btn {
+      display: flex;
+      justify-content: center;
+      .form-btn {
+        width: 200px;
+        height: 50px;
+        font-family: $font-ws;
+        font-weight: 400;
+        font-size: 0.9375em;
+      }
+    }
+  }
+  .invoices {
+    .invoices-head {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+
+      h2 {
+        font-size: 18px;
+        font-family: RobotoMono;
+      }
+
+      .filter {
+        display: flex;
+        justify-content: space-between;
+        width: 180px;
+        > span {
+          height: 24px;
+          font-family: WorkSans;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          color: rgba($color-black, 0.5);
+          cursor: pointer;
+
+          &.active {
+            background-color: rgba($color-blue2, 0.1);
+          }
+        }
+      }
+    }
+    .invoices-body {
+      .table {
+        width: 100%;
+        thead {
+          tr{
+            th {
+              text-align: left;
+              border-bottom: 1px solid rgba($color-black, 0.1);
+              padding: 11px 0;
+              font-family: WorkSans;
+              font-size: 16px;
+              color: rgba($color-black, 0.5)
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              text-align: left;
+              border-bottom: 1px solid rgba($color-black, 0.1);
+              padding: 20px 0;
+              font-family: WorkSans;
+              font-size: 16px;
+              &:first-child {
+                font-weight: bold;
+                &.paid {
+                  color: $color-green;
+                }
+                &.unpaid, &.cancelled {
+                  color: $color-pink;
+                }
+              }
+              .due {
+                color: $color-pink;
+              }
+              &:last-child {
+                span {
+                  cursor: pointer;
+                  margin: 0 7px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+ 

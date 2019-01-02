@@ -1,0 +1,10 @@
+@import '../../../assets/variables';
+
+.copyright {
+  font-family: $font-ws;
+  font-weight: 400;
+  font-size: 0.8125em;
+  line-height: 18px;
+  color: rgba($color-black2, 0.3);
+  text-align: center;
+}

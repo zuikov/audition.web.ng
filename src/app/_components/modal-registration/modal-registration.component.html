@@ -1,0 +1,103 @@
+<div class="modal-title">Register</div>
+<form class="modal-form" [formGroup]="registerForm">
+  <div class="modal-form__group">
+    <label class="modal-form__label">
+      <span class="modal-form__labeltxt">First name</span>
+      <mat-form-field class="modal-form__field">
+        <input matInput type="text" formControlName="username" autocomplete="off">
+        <mat-error>Username name is required and must contain Latin characters only</mat-error>
+      </mat-form-field>
+    </label>
+
+    <!-- <label class="modal-form__label">
+      <span class="modal-form__labeltxt">Last name</span>
+      <mat-form-field class="modal-form__field">
+        <input matInput type="text" formControlName="lastName" autocomplete="off">
+        <mat-error>Last name is required and must contain Latin characters only</mat-error>
+      </mat-form-field>
+    </label> -->
+  </div>
+  <div class="modal-form__group" *ngIf="!verifyEmail" [class.hide]="showEmail()">
+    <label class="modal-form__label">
+      <span class="modal-form__labeltxt">Email</span>
+      <span class="modal-form__fieldbox">
+        <mat-form-field class="modal-form__field">
+          <input matInput type="email" formControlName="email" [required]="!registerForm.value.mobile" autocomplete="off">
+          <mat-error>Email is invalid</mat-error>
+        </mat-form-field>
+        <!--<button class="modal-form__verify" (click)="submitRegisterInfo(registerForm.value)">verify</button>-->
+      </span>
+    </label>
+  </div>
+  <!-- <div class="modal-form__group" *ngIf="verifyEmail">
+    <label class="modal-form__label">
+      <span class="modal-form__labeltxt">Enter code from email</span>
+      <span class="modal-form__fieldbox">
+        <mat-form-field class="modal-form__field">
+          <input matInput type="email" formControlName="emailCode" [required]="verifyEmail" autocomplete="off">
+          <mat-error>Code is invalid</mat-error>
+        </mat-form-field>
+        <button class="modal-form__verify" (click)="accountConfirm('email' ,{email: registerForm.value.email, code: registerForm.value.emailCode })">verify</button>
+      </span>
+    </label>
+  </div> -->
+  <!-- <div class="modal-form__group" *ngIf="!verifyMobile" [class.hide]="showPhone()">
+    <label class="modal-form__label">
+      <span class="modal-form__labeltxt">Phone number</span>
+      <span class="modal-form__fieldbox">
+        <mat-form-field class="modal-form__field">
+          <input matInput type="text" formControlName="mobile" [required]="!registerForm.value.email" autocomplete="off">
+          <mat-error>Phone number is invalid</mat-error>
+        </mat-form-field>
+       <button class="modal-form__verify" (click)="submitRegisterInfo(registerForm.value)">verify</button>
+      </span>
+    </label>
+  </div> -->
+  <!-- <div class="modal-form__group" *ngIf="verifyMobile">
+    <label class="modal-form__label">
+      <span class="modal-form__labeltxt">Enter code from sms</span>
+      <span class="modal-form__fieldbox">
+        <mat-form-field class="modal-form__field">
+          <input matInput type="text" formControlName="mobileCode" [required]="verifyMobile" autocomplete="off">
+          <mat-error>Code is invalid</mat-error>
+        </mat-form-field>
+        <button class="modal-form__verify" (click)="accountConfirm('mobile', {mobile: registerForm.value.mobile, code: registerForm.value.mobileCode})">verify</button>
+      </span>
+    </label>
+  </div> -->
+  <div class="modal-form__group">
+    <label class="modal-form__label">
+      <span class="modal-form__labeltxt">Password</span>
+      <mat-form-field class="modal-form__field">
+        <input matInput type="password" formControlName="password" autocomplete="off">
+        <mat-error>Password must contain at least one capital latter, a digit and a special character in range from 8 to 30 symbols</mat-error>
+      </mat-form-field>
+    </label>
+    <label class="modal-form__label">
+      <span class="modal-form__labeltxt">Confirm password</span>
+      <mat-form-field class="modal-form__field">
+        <input matInput type="password" formControlName="passwordRepeat" autocomplete="off">
+        <mat-error>Passwords do not match</mat-error>
+      </mat-form-field>
+    </label>
+  </div>
+  <div class="modal-form__group">
+    <!-- <button class="modal-form__btn" *ngIf="codeSend" (click)="login({login:registerForm.value.email || registerForm.value.mobile, password: registerForm.value.password})" [disabled]="!isValidated()">login</button> -->
+    <button class="modal-form__btn" *ngIf="codeSend" (click)="login(registerForm.value)" [disabled]="!isValidated()">login</button>
+    <button class="modal-form__btn" *ngIf="!codeSend" (click)="submitRegisterInfo(registerForm.value)" [disabled]="registerForm.invalid">Register</button>
+  </div>
+</form>
+<div class="modal-inform">
+  <div class="modal-inform__error" *ngIf="error">{{error}}</div>
+  <a href="javascript:void(0)" class="modal-inform__link" (click)="openDialogAuth()">Sign in</a>
+</div>
+
+<button mat-dialog-close class="modal-close">
+  <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 0L0 12" transform="translate(1 1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M0 0L12 12" transform="translate(1 1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+
+

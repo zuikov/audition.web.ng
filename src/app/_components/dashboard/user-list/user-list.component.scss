@@ -1,0 +1,98 @@
+@import '../../../../assets/variables';
+
+.transactions {
+  .transactions-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-family: $font-rm;
+    font-weight: 700;
+    font-size: 1.125em;
+    color: $color-black;
+
+    h2 {
+      font-size: 18px;
+      font-family: RobotoMono;
+    }
+
+    .filter {
+      display: flex;
+      justify-content: space-between;
+      width: 180px;
+      > span {
+        height: 24px;
+        font-family: WorkSans;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        color: rgba($color-black, 0.5);
+        cursor: pointer;
+
+        &.active {
+          background-color: rgba($color-blue2, 0.1);
+        }
+      }
+    }
+  }
+  .transactions-body {
+    .table {
+      width: 100%;
+      thead {
+        tr{
+          th {
+            text-align: left;
+            border-bottom: 1px solid rgba($color-black, 0.1);
+            padding: 11px 0;
+            font-family: WorkSans;
+            font-size: 16px;
+            color: rgba($color-black, 0.5)
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            text-align: left;
+            border-bottom: 1px solid rgba($color-black, 0.1);
+            padding: 0;
+            font-family: WorkSans;
+            font-size: 16px;
+            height: 60px;
+            vertical-align: middle;
+            color: black;
+            .btn-box {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .withdrawal {
+                font-family: $font-ws;
+                font-weight: 700;
+                font-size: 1em;
+                color: $color-pink;
+              }
+              .payment {
+                font-family: $font-ws;
+                font-weight: 700;
+                font-size: 1em;
+                color: $color-green;
+              }
+              .table-btn {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                overflow: hidden;
+                border-radius: 50%;
+                background: url("../../../../assets/img/icn/download.svg") no-repeat center center, rgba($color-black,0.05);
+              }
+            }
+            &.no-data {
+              text-align: center;
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+}

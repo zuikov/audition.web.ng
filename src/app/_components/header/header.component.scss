@@ -1,0 +1,86 @@
+@import '../../../assets/variables';
+
+.header {
+  &_entered {
+    height: 80px;
+    padding: 0 60px 0 40px;
+    background-color: #4b54dd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.banner{
+  margin-left: 115px;
+  a{
+    img{
+      margin-left: 7px;
+      height: 70px;
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  &-user {
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    &__photo {
+      width: 32px;
+      height: 32px;
+      margin-right: 12px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    &__name {
+      font-family: $font-ws;
+      font-weight: 600;
+      font-size: 0.9375em;
+      line-height: 18px;
+      color: $color-white;
+      &:before {
+        content: 'Hello,';
+        margin-right: 5px;
+        font-family: $font-ws;
+        font-weight: 400;
+        //font-size: 15px;
+        line-height: 18px;
+        color: $color-white;
+      }
+    }
+  }
+  &-logout {
+    display: flex;
+    align-items: center;
+    font-family: $font-ws;
+    font-weight: 400;
+    font-size: 0.9375em;
+    line-height: 18px;
+    color: rgba($color-white, 0.3);
+    text-decoration: none;
+    svg {
+      margin-right: 9px;
+      fill: rgba($color-white, 0.3);
+    }
+  }
+}
+
+@media only screen and (max-width : 1119px){
+ 
+}
+
+@media only screen and (max-width : 991px){
+  .banner{
+    display: none;
+  }
+}

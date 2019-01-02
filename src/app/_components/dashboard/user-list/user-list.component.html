@@ -1,0 +1,42 @@
+<div class="transactions">
+  <div class="transactions-head">
+    <h2>List of users</h2>
+  </div>
+  <div class="transactions-body">
+    <table class="table">
+      <thead class="table-head">
+      <tr>
+        <th>
+          <span>id</span>
+        </th>
+        <th>
+          <span>First name</span>
+        </th>
+        <th>
+          <span>email</span>
+        </th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user._id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <!-- <td>
+          <span class="btn-box">
+            <span class="payment" [ngClass]="transaction.type?.toLowerCase()">{{getIncomeSign(transaction)}} {{transaction.amount}} {{transaction.currency}}</span>
+            <a href="#" class="table-btn"></a>
+          </span>
+        </td> -->
+      </tr>
+      <tr *ngIf="users.length === 0">
+        <td colspan="4" class="no-data">
+          <span>No users so far</span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

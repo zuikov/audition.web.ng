@@ -1,0 +1,114 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '../../../../assets/variables';
+
+.header {
+  background-color: $color-white;
+  height: 80px;
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  &-logo {
+    display: flex;
+    justify-content: center;
+  }
+}
+.content {
+  background-image: $gradient-blue;
+  height: 363px;
+  width: 600px; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-usename {
+    height: 18px;
+    opacity: .6;
+    margin: 40px 0 16px 0;
+    font-family: $font-ws;
+    font-size: 15px; 
+    color: $color-white; 
+  }
+  &-spacer {
+    width: 94px;
+    height: 3px;
+    margin: 0 0 20px 0;
+    background-color: $color-red3;
+  }
+  &-title {
+    height: 34px;
+    margin: 0 0 20px 0;
+    font-family: $font-rm;
+    line-height: 1.21;
+    font-size: 28px; 
+    font-weight: bold;
+    color: $color-white; 
+  }
+  &-message {
+    width: 500px;
+    height: 72px;
+    opacity: .6;
+    margin: 0 0 20px 0;
+    font-family: $font-ws;
+    font-size: 15px; 
+    color: $color-white; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-contact {
+    
+    height: 24px;
+    margin: 0 0 20px 0;
+    font-family: $font-ws;
+    font-size: 15px; 
+    color: $color-white; 
+  }
+  &-btn {
+    display: inline-block;
+    height: 50px;
+    width: 290px;
+    padding: 0 34px;
+    font-family: $font-ws;
+    font-weight: 500;
+    font-size: 0.9375em;
+    color: $color-white;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background: $gradient-red4;
+    box-shadow: 0 11px 21px 0 rgba(234, 55, 110, 0.2);
+    transition: box-shadow 300ms ease-in-out;
+    &:hover {
+      box-shadow: none;
+    }
+  }  
+}
+.footer {
+  background-color: $color-gray1;
+  height: 96px;
+  width: 600px; 
+  margin: 0 auto;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  &-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      margin: 3px;
+      height: 15px;
+      opacity: .5;
+      font-family: $font-ws;
+      font-size: 13px; 
+      color: $color-black2; 
+      .footer-link {
+        font-family: $font-ws;
+        color: $color-blue;
+        text-decoration: none;
+      }  
+    }
+  }
+}
