@@ -112,25 +112,28 @@ export class ModalRegistrationComponent implements OnInit {
   public login(data): void {
     this.authenticationService.login(data)
       .subscribe(
-        (result: any) => {
-          this.analytics.emitEvent('Authentication pop up', 'Sign in success', 'Sign in');
-          const token = {
-            id: result.token,
-            created: new Date(),
-            rememberMe: true,
-            userId: result.existingUser._id,
-            user: result.existingUser.username
-          };
-          this.tokenService.setToken(token);
-          this.dialogRef.close();
-          if (token.user === 'admin') {
-            this.redirect();
-          }
-          console.log('token', token);
+        (res: any) => {
+          // this.analytics.emitEvent('Authentication pop up', 'Sign in success', 'Sign in');
+          // const token = {
+          //   id: result.token,
+          //   created: new Date(),
+          //   rememberMe: true,
+          //   userId: result.existingUser._id,
+          //   user: result.existingUser.username
+          // };
+          // this.tokenService.setToken(token);
+          // this.dialogRef.close();
+          // if (token.user === 'admin') {
+          //   this.redirect();
+          // }
+          // console.log('token', token);
+          localStorage.setItem('token', res.accessToken);
+          localStorage.setItem('refreshToken', res.refreshToken);
+          this.authenticationService.verifyAdmin();
         },
         error => {
-          this.analytics.emitEvent('Authentication pop up', 'Fail', 'Sign in');
-          console.log('login error registration', error);
+          // this.analytics.emitEvent('Authentication pop up', 'Fail', 'Sign in');
+          console.log('login error: ', error);
         });
   }
 

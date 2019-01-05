@@ -44,10 +44,10 @@ export class AuditorComponent implements OnInit, OnDestroy, AfterContentInit {
 
   public ngAfterContentInit() {
     setTimeout(() => {
-      this.changeValueInput.nativeElement.onmousewheel = this.preventMouseEvents.bind(this);
-      this.changeValueInput.nativeElement.onkeydown = this.preventELetterEnter.bind(this);
-      this.getValueInput.nativeElement.onmousewheel = this.preventMouseEvents.bind(this);
-      this.getValueInput.nativeElement.onkeydown = this.preventELetterEnter.bind(this);
+      // this.changeValueInput.nativeElement.onmousewheel = this.preventMouseEvents.bind(this);
+      // this.changeValueInput.nativeElement.onkeydown = this.preventELetterEnter.bind(this);
+      // this.getValueInput.nativeElement.onmousewheel = this.preventMouseEvents.bind(this);
+      // this.getValueInput.nativeElement.onkeydown = this.preventELetterEnter.bind(this);
     });
   }
 
