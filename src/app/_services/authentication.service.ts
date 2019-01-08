@@ -20,8 +20,7 @@ export class AuthenticationService {
       return this.requestService.post('/admin/auth', data, true);
     }
 
-    isAdmin() {
-      const data = {username: "John13 Dou", email: "john13@mail.com", password: "Q!q1234567"};
+    isAdmin(data) {
       return this.requestService.post('/admin/auth', data, true);
     }
 
@@ -44,7 +43,8 @@ export class AuthenticationService {
     }
 
     verifyAdmin() {
-      this.isAdmin()
+      const data = {};
+      this.isAdmin(data)
         .subscribe(
           (res: any) => {
             if (res && res.message === 'admin status confirmed') {
@@ -54,7 +54,7 @@ export class AuthenticationService {
               console.log('admin authorization failed');
             }
           }
-        )
+        );
     }
 
     checkPassword(data) {
