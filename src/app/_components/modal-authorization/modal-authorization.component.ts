@@ -63,9 +63,7 @@ export class ModalAuthorizationComponent implements OnInit {
           //   this.redirect();
           // }
           // console.log('token', token);
-
-         
-          this.authenticationService.verifyAdmin()
+          this.authenticationService.verifyAdmin();
             // .subscribe(
             //   (res: any) => {
             //     if (res && res.message === 'admin status confirmed') {

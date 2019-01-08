@@ -20,37 +20,15 @@ export class AuthenticationService {
       return this.requestService.post('/admin/auth', data, true);
     }
 
-    isAdmin(data) {
-      return this.requestService.post('/admin/auth', data, true);
-    }
-
-    isAuthenticated(data) {
-      this.checkAccess(null)
-      .subscribe(
-        (result: any) => {
-          console.log('this.message1', result.message);
-          if (result.message === 'Admin have authorized successfully') {
-            return true;
-          } else {
-            this.router.navigate(['']);
-            return false;
-          }
-        },
-        error => {
-          console.log('checkAccess error', error);
-          return false;
-        });
-    }
-
     verifyAdmin() {
-      const data = {};
-      this.isAdmin(data)
+      this.checkAccess(null)
         .subscribe(
           (res: any) => {
             if (res && res.message === 'admin status confirmed') {
               console.log('admin authorized successfully!');
               this.router.navigate(['dashboard']);
             } else {
+              this.router.navigate(['']);
               console.log('admin authorization failed');
             }
           }
@@ -82,7 +60,9 @@ export class AuthenticationService {
     }
 
     logout() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('refreshToken');
       this.isLoggedIn.emit(false);
-        this.router.navigate(['']);
+      this.router.navigate(['']);
     }
 }

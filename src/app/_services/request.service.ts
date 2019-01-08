@@ -18,12 +18,6 @@ export class RequestService {
     return this.http.post(AppSettings.API_ENDPOINT + url, data, this.getHeaders(auth));
   }
 
-  // post(url: string, auth?: boolean) {
-  //   console.log('request service post method starts! ', 'url: ', url, 'data: ');
-  //   console.log('AppSettings.API_ENDPOINT + url ', AppSettings.API_ENDPOINT + url);
-  //   return this.http.post(AppSettings.API_ENDPOINT + url, this.getHeaders(auth));
-  // }
-
   get(url: string, auth?: boolean) {
     return this.http.get(AppSettings.API_ENDPOINT + url, this.getHeaders(auth));
   }
