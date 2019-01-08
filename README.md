@@ -4,13 +4,13 @@ This project was created to test some program features and to learn English by a
 This Angular audition app interact with audition.api wich fetch mLab Mongo database.
 All of this work with one free Heroku dyno, so speed could be better, but it's enough for testing.
 
-## Credentials to test base functioality
+## Credentials to test base functionality
 
 USERNAME: user
 EMAIL: user@mail.com
 PASSWORD: Q!q123456
 
-## Credentials to test admin functioality
+## Credentials to test admin functionality
 
 USERNAME: admin
 EMAIL: admin@mail.com
