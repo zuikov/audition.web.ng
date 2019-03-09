@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -55,5 +54,6 @@
   "engines": {
     "node": "^8.x",
     "npm": "^6.x"
-  }
+  },
+  "heroku-run-build-script": true
 }
