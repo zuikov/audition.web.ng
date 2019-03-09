@@ -56,7 +56,8 @@ export class ModalAuthorizationComponent implements OnInit {
           localStorage.setItem('token', res.accessToken);
           localStorage.setItem('refreshToken', res.refreshToken);
 
- 
+          this.authenticationService.isLoggedIn.emit(true);
+          this.dialogRef.close();
           // if (token.user === 'admin') {
           //   console.log('token.user', token.user);
           //   this.redirect();
